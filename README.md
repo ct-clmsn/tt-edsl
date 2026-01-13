@@ -7,12 +7,12 @@ complex task. Each accelerator is named after the processor hosted
 on the accelerator. As an example, the Grayskull accelerator hosts
 the Grayskull processor. The Grayskull processor is designed using
 multiple Tensix processing elements. Tensix processing elements are
-built using 5 RV32ILY cores (RV32I is the most basic 32 bit RISC-V
+built using 5 RV32ILY harts (RV32I is the most basic 32 bit RISC-V
 architecture; LY is a custom extension designed and implemented by
 Tenstorrent for AI workloads).
 
 Programming a Tensix processing element requires writing an independent
-ISO C++17 program for each RV32ILY core. Each program is called a kernel.
+ISO C++17 program for each RV32ILY hart. Each program is called a kernel.
 Users may find managing and maintaining multiple individual programs for
 Tensix processing elements burdensome.
 
@@ -20,7 +20,7 @@ Tensix processing elements burdensome.
 
 tt-edsl aims to reduce the complexity of programming kernels for Tensix
 processing elements by allowing users the ability to implement kernels
-for each core inside the host program.
+for each hart inside the host program.
 
 tt-edsl achieves this effect by offering users an embedded domain
 specific language using ISO C++. tt-esdl exercises template
